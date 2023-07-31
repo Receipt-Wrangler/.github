@@ -21,3 +21,71 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 * OCR/AI implementation to help automate Receipt Creation
 * Receipt Creation via Plaid
 
+# Getting Started
+We'll go step by step in getting everything installed.
+
+Step 1: Set up docker-compose.yaml
+Below is a sample. Change passwords, and volumes as needed.
+```yaml
+version: '3.5'
+services:
+  db:
+    image: library/mariadb:10
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: change_me
+      MYSQL_USER: wrangler
+      MYSQL_PASSWORD: change_me
+      MYSQL_DATABASE: wrangler
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "--silent"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  api:
+    image: noah231515/receipt-wrangler:api
+    restart: always
+    working_dir: /go/api
+    command: ./api --env prod
+    ports:
+      - 9080:8081
+    volumes:
+      - ./config:/go/api/config
+      - ./data:/go/api/data
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+     image: noah231515/receipt-wrangler:desktop
+     restart: always
+     ports:
+       - 9081:80
+```
+
+Step 2: Set up config.prod.json
+This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.
+The connection string will be moved out to simplify the deployment process in the future.
+```json
+{
+  "connectionString": "wrangler:dbPasswordFromDockerCompose@tcp(db:3306)/wrangler?charset=utf8mb4&parseTime=True&loc=Local",
+  "secretKey": "Po8yh@u$SvKCwY7nFiqxG!*PH*Ru"
+}
+```
+
+Step 3: Set up feature-config.prod.json
+This config also needs to be in the directory that gets mounted to /go/api/config
+```json
+{
+  "enabledLocalSignUp": false
+}
+```
+
+# After Deployment
+Currently there is no set up process after deployment. Meaning, your first user can be created through the auth screen.
+Since it will be the first user o fthe system, this user will be automatically made system administrator.
+
+Now it's time to wrangle!
