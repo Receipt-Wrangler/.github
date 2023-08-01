@@ -48,6 +48,11 @@ services:
   api:
     image: noah231515/receipt-wrangler:api
     restart: always
+    environment:
+      MYSQL_HOST: db:3306
+      MYSQL_USER: wrangler
+      MYSQL_PASSWORD: change_me
+      MYSQL_DATABASE: wrangler
     working_dir: /go/api
     command: ./api --env prod
     ports:
