@@ -72,7 +72,7 @@ The connection string will be moved out to simplify the deployment process in th
 ```json
 {
   "connectionString": "wrangler:dbPasswordFromDockerCompose@tcp(db:3306)/wrangler?charset=utf8mb4&parseTime=True&loc=Local",
-  "secretKey": "Po8yh@u$SvKCwY7nFiqxG!*PH*Ru"
+  "secretKey": "randomlyGeneratedSecureString"
 }
 ```
 
