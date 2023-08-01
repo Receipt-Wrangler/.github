@@ -86,6 +86,6 @@ This config also needs to be in the directory that gets mounted to /go/api/confi
 
 # After Deployment
 Currently there is no set up process after deployment. Meaning, your first user can be created through the auth screen.
-Since it will be the first user o fthe system, this user will be automatically made system administrator.
+Since it will be the first user of the system, this user will be automatically made system administrator.
 
 Now it's time to wrangle!
