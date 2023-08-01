@@ -18,8 +18,8 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 
 # General Roadmap
 * Dashboard(s) per group for spending analytics
-* OCR/AI implementation to help automate Receipt Creation
-* Receipt Creation via Plaid
+* OCR/AI implementation to help automate Receipt creation
+* Syncing bank transactions to create receipts
 
 # Getting Started
 We'll go step by step in getting everything installed.
