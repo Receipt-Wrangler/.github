@@ -20,6 +20,7 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 * Dashboard(s) per group for spending analytics
 * OCR/AI implementation to help automate Receipt creation
 * Syncing bank transactions to create receipts
+* Mobile app
 
 # Getting Started
 We'll go step by step in getting everything installed.
