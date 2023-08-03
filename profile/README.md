@@ -1,3 +1,5 @@
+![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/48922c60-d3c9-44d1-8354-4c54e8b5d657)
+
 # 🧾 Introduction 🧾
 
 Welcome, thanks for taking a look! Receipt Wrangler is an easy to use self hosted Receipt manager.
