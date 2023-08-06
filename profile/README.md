@@ -17,10 +17,11 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 * Utilizes groups to divide expenses
 * Receipt Searching
 * Receipt Filtering
+* Partial receipt creation with OCR/AI from receipt image to help automate Receipt creation
 
 # General Roadmap
 * Dashboard(s) per group for spending analytics
-* OCR/AI implementation to help automate Receipt creation
+* OCR/AI implementation to fully automate Receipt creation
 * Syncing bank transactions to create receipts
 * Mobile app
 
@@ -79,6 +80,7 @@ This config needs to be in the directory that gets mounted to /go/api/config fro
 The connection string will be moved out to simplify the deployment process in the future.
 ```json
 {
+  "openAiKey": "keyHere",
   "secretKey": "randomlyGeneratedSecureString"
 }
 ```
@@ -87,9 +89,17 @@ Step 3: Set up feature-config.prod.json
 This config also needs to be in the directory that gets mounted to /go/api/config
 ```json
 {
+  "aiPoweredReceipts": false,
   "enabledLocalSignUp": false
 }
 ```
+
+Step 4: Forward api calls to backend
+Lastly, we need to forward api calls to backend.
+Below is an example using NGINX proxy manager. The path at / is what is being exposed to the internet. Without this the requests sent to paths at /api/ will not make it to the backend. Instead, the frontend will attempt to interpert that route.
+This is something I would like to address within the docker compose, but haven't quite gotten around to it yet.
+![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/a494a300-982b-4392-9755-841db8042b86)
+
 
 # After Deployment
 Currently there is no set up process after deployment. Meaning, your first user can be created through the auth screen.
