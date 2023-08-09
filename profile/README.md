@@ -29,7 +29,8 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 We'll go step by step in getting everything installed.
 
 Step 1: Set up docker-compose.yaml
-Below is a sample. Change passwords, and volumes as needed.
+Below is a sample using mariadb. Change passwords, and volumes as needed.
+
 ```yaml
 version: '3.5'
 services:
@@ -53,10 +54,59 @@ services:
     image: noah231515/receipt-wrangler:api
     restart: always
     environment:
-      MYSQL_HOST: db:3306
-      MYSQL_USER: wrangler
-      MYSQL_PASSWORD: change_me
-      MYSQL_DATABASE: wrangler
+      DB_HOST: db:3306
+      DB_USER: wrangler
+      DB_PASSWORD: change_me
+      DB_NAME: wrangler
+      DB_ENGINE: mariadb
+    working_dir: /go/api
+    command: ./api --env prod
+    ports:
+      - 9080:8081
+    volumes:
+      - ./config:/go/api/config
+      - ./data:/go/api/data
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+     image: noah231515/receipt-wrangler:desktop
+     restart: always
+     ports:
+       - 9081:80
+```
+
+Additionally, postgresql is supported. Below is an example
+
+```yaml
+version: '3.5'
+services:
+  db:
+    image: postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: wrangler
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: wrangler
+    volumes:
+      - ./postgres:/var/lib/postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  api:
+    image: noah231515/receipt-wrangler:api
+    restart: always
+    environment:
+      DB_HOST: db:3306
+      DB_PORT: 5432
+      DB_USER: wrangler
+      DB_PASSWORD: change_me
+      DB_NAME: wrangler
+      DB_ENGINE: postgresql
     working_dir: /go/api
     command: ./api --env prod
     ports:
