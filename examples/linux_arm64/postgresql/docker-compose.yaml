@@ -1,14 +1,14 @@
 version: "3.5"
 services:
   db:
-    image: postgres
+    image: arm64v8/postgres
     restart: always
     environment:
       POSTGRES_USER: wrangler
       POSTGRES_PASSWORD: change_me
       POSTGRES_DB: wrangler
     volumes:
-      - ./postgres:/var/lib/postgres
+      - ./pgsql:/var/lib/pgsql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
       interval: 10s
@@ -16,7 +16,7 @@ services:
       retries: 5
 
   api:
-    image: noah231515/receipt-wrangler-api:linux_x64
+    image: noah231515/receipt-wrangler-api:linux_arm64
     restart: always
     environment:
       DB_HOST: db
@@ -37,7 +37,7 @@ services:
         condition: service_healthy
 
   frontend:
-    image: noah231515/receipt-wrangler-desktop:linux_x64
+    image: noah231515/receipt-wrangler-desktop:linux_arm64
     restart: always
     ports:
       - 9081:80
