@@ -83,7 +83,7 @@ Additionally, postgresql is supported. Below is an example
 version: '3.5'
 services:
   db:
-    image: postgresql
+    image: postgres
     restart: always
     environment:
       POSTGRES_USER: wrangler
