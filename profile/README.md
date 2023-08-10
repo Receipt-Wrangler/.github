@@ -53,7 +53,7 @@ This config also needs to be in the directory that gets mounted to /go/api/confi
 ```json
 {
   "aiPoweredReceipts": false,
-  "enabledLocalSignUp": false
+  "enableLocalSignUp": false
 }
 ```
 
