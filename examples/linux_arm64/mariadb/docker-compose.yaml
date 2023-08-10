@@ -17,7 +17,7 @@ services:
       retries: 5
 
   api:
-    image: noah231515/receipt-wrangler-api:linux_arm6
+    image: noah231515/receipt-wrangler-api:linux_arm64
     restart: always
     environment:
       DB_HOST: db:3306
