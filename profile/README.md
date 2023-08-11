@@ -33,8 +33,7 @@ We'll go step by step in getting everything installed.
 
 Step 1: Set up docker-compose.yaml
 
-- [linux_64x examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples/linux_x64)
-- [linux_arm examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples/linux_arm64)
+- [Examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples)
 
 Step 2: Set up config.prod.json
 This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.

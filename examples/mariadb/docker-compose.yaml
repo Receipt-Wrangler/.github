@@ -1,30 +1,30 @@
 version: "3.5"
 services:
   db:
-    image: arm64v8/postgres
+    image: library/mariadb:10
     restart: always
     environment:
-      POSTGRES_USER: wrangler
-      POSTGRES_PASSWORD: change_me
-      POSTGRES_DB: wrangler
+      MYSQL_ROOT_PASSWORD: change_me
+      MYSQL_USER: wrangler
+      MYSQL_PASSWORD: change_me
+      MYSQL_DATABASE: wrangler
     volumes:
-      - ./pgsql:/var/lib/pgsql
+      - ./mariadb:/var/lib/mysql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
       interval: 10s
       timeout: 10s
       retries: 5
 
   api:
-    image: noah231515/receipt-wrangler-api:linux_arm64
+    image: noah231515/receipt-wrangler-api:latest
     restart: always
     environment:
-      DB_HOST: db
-      DB_PORT: 5432
+      DB_HOST: db:3306
       DB_USER: wrangler
       DB_PASSWORD: change_me
       DB_NAME: wrangler
-      DB_ENGINE: postgresql
+      DB_ENGINE: mariadb
     working_dir: /go/api
     command: ./api --env prod
     ports:
@@ -32,12 +32,13 @@ services:
     volumes:
       - ./config:/go/api/config
       - ./data:/go/api/data
+      - ./logs:/go/api/logs
     depends_on:
       db:
         condition: service_healthy
 
   frontend:
-    image: noah231515/receipt-wrangler-desktop:linux_arm64
+    image: noah231515/receipt-wrangler-desktop:latest
     restart: always
     ports:
       - 9081:80
