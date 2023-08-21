@@ -56,12 +56,21 @@ This config also needs to be in the directory that gets mounted to /go/api/confi
 }
 ```
 
-Step 4: Forward api calls to backend
-Lastly, we need to forward api calls to backend.
+Step 4:
+
+**If you are using the proxy container in the docker compose stack, skip this step**
+
+Forward api calls to backend
+Lastly, we need to forward api calls to backend if you are not using the preconfigured proxy from the proxy.
 Below is an example using NGINX proxy manager. The path at / is what is being exposed to the internet. Without this the requests sent to paths at /api/ will not make it to the backend. Instead, the frontend will attempt to interpert that route.
 This is something I would like to address within the docker compose, but haven't quite gotten around to it yet.
 
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/2fe17995-b4c2-40c1-91d3-c046a6666f4d)
+
+Step 5: Deploy
+
+If using the proxy container, deploy the stack and point all traffic to the proxy container.
+If you are not using the proxy container, point all traffic to the frontend container.
 
 # After Deployment
 
