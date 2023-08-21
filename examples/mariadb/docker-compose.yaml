@@ -16,6 +16,14 @@ services:
       timeout: 10s
       retries: 5
 
+  proxy:
+    image: noah231515/receipt-wrangler-proxy:latest
+    ports:
+      - 9082:80
+    depends_on:
+      - api
+      - frontend
+
   api:
     image: noah231515/receipt-wrangler-api:latest
     restart: always
