@@ -62,9 +62,12 @@ Step 4:
 
 Forward api calls to backend
 Lastly, we need to forward api calls to backend if you are not using the preconfigured proxy from the proxy.
-Below is an example using NGINX proxy manager. The path at / is what is being exposed to the internet. Without this the requests sent to paths at /api/ will not make it to the backend. Instead, the frontend will attempt to interpert that route.
-This is something I would like to address within the docker compose, but haven't quite gotten around to it yet.
+Below is an example using NGINX proxy manager. Without this step, the requests sent to paths at /api/ will not make it to the backend. Instead, the frontend will attempt to interpert those requests.
 
+## Details Tab
+![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/9690b448-93d2-41d7-8852-ef411d7283b5)
+
+## Locations Tab
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/2fe17995-b4c2-40c1-91d3-c046a6666f4d)
 
 Step 5: Deploy
