@@ -74,7 +74,13 @@ If you are not using the proxy container, point all traffic to the frontend cont
 
 # After Deployment
 
-Currently there is no set up process after deployment. Meaning, your first user can be created through the auth screen.
-Since it will be the first user of the system, this user will be automatically made system administrator.
+After the app is deployed, a default user will be created with the following credentials:
+username: admin
+password: admin
+
+Your credentials can be changed by opening the sidebar, clicking on your user avatar on the top left hand corner and then clicking settings.
+There in the user profile, your displayname and username can be changed.
+
+For now, your username cannot be changed from this screen, but can be changed from the the manage users list. This will be remidied in the future.
 
 Now it's time to wrangle!
