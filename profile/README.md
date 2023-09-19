@@ -19,12 +19,12 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 - Receipt Searching
 - Receipt Filtering
 - Partial receipt creation with OCR/AI from receipt image to help automate Receipt creation
+- Email integration to upload receipts via email
 
 # General Roadmap
 
 - Dashboard(s) per group for spending analytics
 - OCR/AI implementation to fully automate Receipt creation
-- Syncing bank transactions to create receipts
 - Mobile app
 
 # Getting Started
@@ -65,9 +65,11 @@ Lastly, we need to forward api calls to backend if you are not using the preconf
 Below is an example using NGINX proxy manager. Without this step, the requests sent to paths at /api/ will not make it to the backend. Instead, the frontend will attempt to interpert those requests.
 
 ## Details Tab
+
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/9690b448-93d2-41d7-8852-ef411d7283b5)
 
 ## Locations Tab
+
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/2fe17995-b4c2-40c1-91d3-c046a6666f4d)
 
 Step 5: Deploy
@@ -87,3 +89,7 @@ There in the user profile, your displayname and username can be changed.
 For now, your username cannot be changed from this screen, but can be changed from the the manage users list. This will be remidied in the future.
 
 Now it's time to wrangle!
+
+# Integrations
+
+Receipt Wrangler currently supports uploading receipts via email. Check out the documentation on how to set it up. [See Documentation](https://github.com/Receipt-Wrangler/.github/tree/main/integrations)
