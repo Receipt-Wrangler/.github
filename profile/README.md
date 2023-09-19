@@ -89,3 +89,7 @@ There in the user profile, your displayname and username can be changed.
 For now, your username cannot be changed from this screen, but can be changed from the the manage users list. This will be remidied in the future.
 
 Now it's time to wrangle!
+
+# Integrations
+
+Receipt Wrangler currently supports uploading receipts via email. Check out the documentation on how to set it up. [See Documentation](https://github.com/Receipt-Wrangler/.github/tree/main/integrations)
