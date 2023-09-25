@@ -33,11 +33,14 @@ We'll go step by step in getting everything installed.
 
 Step 1: Set up docker-compose.yaml
 
+**Important Note:**
+If you decide to use the built in proxy, the service names in the compose must remain as they are in the examples, otherwise the proxy will not work.
+The ports of each service are free to change, though.
+
 - [Examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples)
 
 Step 2: Set up config.prod.json
 This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.
-The connection string will be moved out to simplify the deployment process in the future.
 
 ```json
 {
