@@ -5,6 +5,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: wrangler
+      PGUSER: wrangler
       POSTGRES_PASSWORD: change_me
       POSTGRES_DB: wrangler
     volumes:
