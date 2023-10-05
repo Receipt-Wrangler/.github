@@ -3,6 +3,7 @@ services:
   db:
     image: library/mariadb:10
     restart: always
+    command: --sql-mode="ANSI_QUOTES"
     environment:
       MYSQL_ROOT_PASSWORD: change_me
       MYSQL_USER: wrangler
