@@ -37,14 +37,8 @@ Step 1: Set up docker-compose.yaml
 
 Step 2: Set up config.prod.json
 This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.
-The connection string will be moved out to simplify the deployment process in the future.
 
-```json
-{
-  "openAiKey": "keyHere",
-  "secretKey": "randomlyGeneratedSecureString"
-}
-```
+See the [config documentation](https://github.com/Receipt-Wrangler/.github/tree/main/configuration/configuration.md) for samples and explanations of each value.
 
 Step 3: Set up feature-config.prod.json
 This config also needs to be in the directory that gets mounted to /go/api/config
