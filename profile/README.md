@@ -37,6 +37,9 @@ Step 1: Set up docker-compose.yaml
 If you decide to use the built in proxy, the service names in the compose must remain as they are in the examples, otherwise the proxy will not work.
 The ports of each service are free to change, though.
 
+Receipt Wrangler can be set up as either a monolithic app (all in one container), or as microservices (each part as its own container).
+Check out the examples to see which one is better for you.
+
 - [Examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples)
 
 Step 2: Set up config.prod.json
