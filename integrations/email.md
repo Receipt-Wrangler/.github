@@ -15,10 +15,10 @@ Add credentials for your email provider, and polling interval (in seconds)
   "emailPollingInterval": 1800, // 30 minutes
   "emailSettings": [
     {
-      "host": "smtp.qq.com",
-      "port": 465,
-      "username": "test",
-      "password": "test"
+      "host": "imap.gmail.com", // Your email provider's imap server
+      "port": 993, // Your email provider's imap port
+      "username": "test@gmail.com", // Your email
+      "password": "passwordOrAppPassword" // Your password or app password
     }
   ]
 }
