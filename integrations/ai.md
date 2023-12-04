@@ -27,7 +27,7 @@ config.prod.json
   "aiSettings": {
     "type": "aiType",
     "url": "url",
-    "key"
+    "key": "apiKey"
   },
 }
 ```
