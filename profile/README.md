@@ -46,7 +46,7 @@ Check out the examples to see which one is better for you.
 
 ## Step 2: Set up config.prod.json
 
-This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.
+This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above. Simply run the compose stack to generate a stubbed out config file, then check out the configuration documentation, below as well as the examples to fill out the config.
 
 See the [config documentation](https://github.com/Receipt-Wrangler/.github/tree/main/configuration/configuration.md) for samples and explanations of each value.
 
