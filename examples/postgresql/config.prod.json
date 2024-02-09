@@ -1,0 +1,29 @@
+{
+  "secretKey": "secretKey",
+  "aiSettings": {
+    "type": "openAi",
+    "url": "urlToLocallyHostedLLM",
+    "key": "openAiKey"
+  },
+  "emailPollingInterval": 1800,
+  "emailSettings": [
+    {
+      "host": "emailHost",
+      "port": "emailPort",
+      "username": "emailAddress",
+      "password": "password/apiKey"
+    }
+  ],
+  "features": {
+    "enableLocalSignUp": true,
+    "aiPoweredReceipts": true
+  },
+  "database": {
+    "user": "wrangler",
+    "password": "changeMe",
+    "name": "wrangler",
+    "host": "db",
+    "port": 5432,
+    "engine": "postgresql"
+  }
+}

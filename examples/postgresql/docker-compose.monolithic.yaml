@@ -18,13 +18,6 @@ services:
     image: noah231515/receipt-wrangler:latest
     entrypoint: ./entrypoint.sh
     restart: always
-    environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_USER: wrangler
-      DB_PASSWORD: change_me
-      DB_NAME: wrangler
-      DB_ENGINE: postgresql
     volumes:
       - ./config:/app/receipt-wrangler-api/config
       - ./data:/app/receipt-wrangler-api/data
