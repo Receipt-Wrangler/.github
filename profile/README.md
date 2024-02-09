@@ -44,14 +44,11 @@ Check out the examples to see which one is better for you.
 
 - [Examples](https://github.com/Receipt-Wrangler/.github/tree/main/examples)
 
-Step 2: Set up config.prod.json
+## Step 2: Set up config.prod.json
+
 This config needs to be in the directory that gets mounted to /go/api/config from the docker-compose.yaml above.
 
 See the [config documentation](https://github.com/Receipt-Wrangler/.github/tree/main/configuration/configuration.md) for samples and explanations of each value.
-
-## Step 2: Set up feature-config.prod.json
-
-This config also needs to be in the directory that gets mounted to /go/api/config
 
 ## Step 3: Add proxy in NPM Proxy Manager (Optional):
 
