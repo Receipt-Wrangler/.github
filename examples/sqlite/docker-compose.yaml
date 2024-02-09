@@ -3,9 +3,6 @@ services:
   api:
     image: noah231515/receipt-wrangler-api:latest
     restart: always
-    environment:
-      DB_FILENAME: wrangler.sqlite
-      DB_ENGINE: sqlite
     working_dir: /go/api
     command: ./api --env prod
     ports:

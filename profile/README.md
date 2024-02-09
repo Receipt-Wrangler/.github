@@ -31,7 +31,7 @@ I personally daily drive Receipt Wrangler to keep track of my expenses with my s
 
 We'll go step by step in getting everything installed.
 
-Step 1: Set up docker-compose.yaml
+## Step 1: Set up docker-compose.yaml
 
 **Important Note:**
 If you decide to use the built in proxy, the service names in the compose must remain as they are in the examples, otherwise the proxy will not work.
@@ -47,17 +47,11 @@ This config needs to be in the directory that gets mounted to /go/api/config fro
 
 See the [config documentation](https://github.com/Receipt-Wrangler/.github/tree/main/configuration/configuration.md) for samples and explanations of each value.
 
-Step 3: Set up feature-config.prod.json
+## Step 2: Set up feature-config.prod.json
+
 This config also needs to be in the directory that gets mounted to /go/api/config
 
-```json
-{
-  "aiPoweredReceipts": false,
-  "enableLocalSignUp": false
-}
-```
-
-Step 4:
+## Step 3: Add proxy in NPM Proxy Manager (Optional):
 
 **If you are using the proxy container in the docker compose stack, skip this step**
 
@@ -73,7 +67,7 @@ Below is an example using NGINX proxy manager. Without this step, the requests s
 
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/2fe17995-b4c2-40c1-91d3-c046a6666f4d)
 
-Step 5: Deploy
+## Step 4: Deploy
 
 If using the proxy container, deploy the stack and point all traffic to the proxy container.
 If you are not using the proxy container, point all traffic to the frontend container.
