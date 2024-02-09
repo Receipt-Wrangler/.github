@@ -28,7 +28,6 @@ Sample config:
     "aiPoweredReceipts": true
   },
   "database": {
-    "rootPassword": "root",
     "user": "wrangler",
     "password": "changeMe",
     "name": "wrangler",
