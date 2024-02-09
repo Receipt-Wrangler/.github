@@ -10,7 +10,7 @@ Sample config:
 {
   "secretKey": "secretKey",
   "aiSettings": {
-    "type": "openAi",
+    "type": "openAi or llamagpt",
     "url": "urlToLocallyHostedLLM",
     "key": "openAiKey"
   },
@@ -34,7 +34,7 @@ Sample config:
     "name": "wrangler",
     "host": "localhost",
     "port": 3306,
-    "engine": "sqlite",
+    "engine": "sqlite or mysql or mariadb or postgresql",
     "filename": "wrangler.sqlite"
   }
 }
