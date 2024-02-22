@@ -23,7 +23,6 @@ config.prod.json
 
 ```json
 {
-  "openAiKey": "keyHere",
   "aiSettings": {
     "type": "aiType",
     "url": "url",
