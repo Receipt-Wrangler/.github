@@ -31,7 +31,6 @@ config.prod.json
 }
 ```
 
-- openAiKey: This value is the old way to provide the openAiKey and will be removed on November 1st, 2023.
 - aiSettings.type: Options are openAi, gemini, or llamaGpt
 - aiSettings.url: This value is only used if the the type is set to llamaGpt. F.ex, http://192.168.0.200:3000/api/v1/chat/completions
 - aiSettings.key: This value is currently only used if type is set to openAi, this is replacing "openAiKey"
