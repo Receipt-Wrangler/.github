@@ -26,7 +26,15 @@ Receipt Wrangler features:
 * Continuous feature improvements
 
 # Documentation
+
 Check out the documentation at [receiptwrangler.io](https://receiptwrangler.io)
 
 # Demo
+
 Check out the demo at [demo.receiptwrangler.io](https://demo.receiptwrangler.io)
+
+# Contributing
+
+Interested in contributing? Check out
+the [developer documentation](https://receiptwrangler.io/docs/category/development) to get started.
+
