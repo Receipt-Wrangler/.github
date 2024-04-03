@@ -21,7 +21,7 @@ Receipt Wrangler features:
 
 # Roadmap
 
-* Mobile App
+* Mobile App (In beta, check out https://receiptwrangler.io/mobile-app-registration to get registered)
 * YNAB Integration
 * Continuous feature improvements
 
