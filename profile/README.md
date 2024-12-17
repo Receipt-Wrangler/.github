@@ -20,10 +20,7 @@ Receipt Wrangler features:
 * Simple dashboards for filtering receipts, and seeing who owes who
 
 # Roadmap
-
-* Mobile App (In beta, check out https://receiptwrangler.io/mobile-app-registration to get registered)
-* YNAB Integration
-* Continuous feature improvements
+Check out the 2025 roadmap [here](https://github.com/orgs/Receipt-Wrangler/projects/2)
 
 # Documentation
 
