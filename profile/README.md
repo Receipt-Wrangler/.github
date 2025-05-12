@@ -1,5 +1,9 @@
 ![image](https://github.com/Receipt-Wrangler/.github/assets/44912201/48922c60-d3c9-44d1-8354-4c54e8b5d657)
 
+# Project Status
+
+This project is currently in maintenance mode. See the announcement [here](https://www.reddit.com/r/selfhosted/comments/1kc9daq/receipt_wrangler_may_update_maintenance_mode/) for more details.
+
 # 🧾 Introduction 🧾
 
 Welcome, thanks for taking a look! Receipt Wrangler is an easy-to-use self-hosted receipt manager.
